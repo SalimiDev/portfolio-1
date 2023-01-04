@@ -10,7 +10,7 @@ import { About, Footer, Header, Skills, Testimonial, Work, work } from './contai
 const App = () => {
     return (
         <div className='app'>
-            {/* <Navbar /> */}
+            <Navbar />
             <Header />
             <About />
             <Work />
