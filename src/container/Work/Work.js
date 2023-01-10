@@ -13,6 +13,16 @@ const Work = () => {
     const [activeFilter, setActiveFilter] = useState('All');
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
+        //fetch data
+        useEffect(() => {
+            const query = '*[_type == "works"]';
+    
+            client.fetch(query).then(data => {
+                setWorks(data);
+                setFilterWork(data);
+            });
+        }, []);
+
     //handle filtering work items
     const handleWorkFilter = item => {
         setActiveFilter(item);
@@ -28,16 +38,6 @@ const Work = () => {
             }
         }, 500);
     };
-
-    //fetch data
-    useEffect(() => {
-        const query = '*[_type == "works"]';
-
-        client.fetch(query).then(data => {
-            setWorks(data);
-            setFilterWork(data);
-        });
-    }, []);
 
     return (
         <>
