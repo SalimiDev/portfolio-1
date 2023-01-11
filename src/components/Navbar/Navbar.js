@@ -27,7 +27,7 @@ function Navbar() {
                 <HiMenuAlt4 onClick={() => setToggle(true)} />
 
                 {toggle && (
-                    <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: 'easeOut' }}>
+                    <motion.div whileInView={{ x: [260, 0] }} transition={{ duration: 0.85, ease: 'easeOut' }}>
                         <HiX onClick={() => setToggle(false)} />
                         <ul>
                             {['home', 'about', 'work', 'skills', 'contact'].map(item => (
